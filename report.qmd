@@ -1,0 +1,116 @@
+---
+title: "全球能源消耗与碳排放——灌溉农业数据复现"
+author: "李曼娜"
+date: "2026-04-02"
+repo-url: "https://github.com/Britney-128/D2RS--zy"
+format:
+  html:
+    toc: true
+    toc-depth: 3
+    self-contained: true
+    code-fold: false
+---
+
+> 📦 **源代码**: [GitHub 仓库](https://github.com/Britney-128/D2RS--zy)
+
+# 1. 研究背景
+
+本项目基于以下文献进行复现：
+
+> **原始论文**: Global Energy Use and Carbon Emissions in Irrigated Agriculture
+> - 作者: Jingxiu Qin et al. (2024)
+> - 期刊: Nature Food
+
+复现论文中的关键结果图（Fig1–Fig5），包括灌溉农业中的能源消耗和碳排放分析。
+
+# 2. 研究内容
+
+1. 全球灌溉农业能源消耗分布
+2. 不同灌溉方式的能源强度对比
+3. 水-能源-碳排放关联分析
+4. 区域差异和趋势分析
+
+# 3. 复现结果
+
+## Fig1: 水-能源强度散点图
+
+![Fig1: 水-能源强度散点图](results/fig1.png)
+
+- 展示全球各国水使用强度与能源强度的相关性
+- 按大洲着色，标注关键国家
+- 包含线性回归趋势线
+
+## Fig2: 灌溉方式能源消耗箱线图
+
+![Fig2: 灌溉方式能源消耗箱线图](results/fig2.png)
+
+- 对比不同灌溉方式（滴灌、喷灌、地面灌溉等）的能源消耗
+- 显示各方式的中位数和分布范围
+
+## Fig3: CO2排放强度箱线图
+
+![Fig3: CO2排放强度箱线图](results/fig3.png)
+
+- 展示不同灌溉方式的碳排放强度
+- 评估各方式的环境影响
+
+## Fig4: 复现结果对比图1
+
+![Fig4: 复现结果对比图1](results/reproduction-fig1.png)
+
+- 复现论文中的主要结果可视化
+
+## Fig5: 复现结果对比图2
+
+![Fig5: 复现结果对比图2](results/reproduction-fig2.png)
+
+- 复现论文中的次要结果可视化
+
+# 4. 项目结构
+
+```
+D2RS--zy/
+├── README.md
+├── report.qmd              # 本报告
+├── Source data.xlsx        # 原始数据
+├── report/                 # R Markdown 源文件
+│   ├── main_results1.rmd
+│   └── main_results2.rmd
+└── results/                # 生成的图表
+    ├── fig1.png - fig5.png
+    └── reproduction-fig1.png - reproduction-fig5.png
+```
+
+# 5. 复现方法
+
+## 5.1 环境要求
+
+- R 语言环境
+- RStudio 或 Positron IDE
+
+## 5.2 依赖包
+
+```r
+# 安装所需包
+install.packages(c("caret", "dplyr", "tidyr", "forcats",
+                   "data.table", "randomForest", "pROC",
+                   "utils", "patchwork", "ggplot2", "ggrepel"))
+```
+
+## 5.3 运行步骤
+
+1. 在 RStudio 中打开项目
+2. 恢复 R 环境（如有 renv.lock）
+3. 运行 `report/main_results1.rmd`
+4. 运行 `report/main_results2.rmd`
+5. 生成的图表保存在 `results/` 目录
+
+# 6. 小组成员
+
+| 姓名 | GitHub |
+|------|--------|
+| 李曼娜 | Britney-128 |
+
+# 7. 结论
+
+本项目成功复现了灌溉农业能源消耗与碳排放的关键图表，验证了论文中的主要发现。代码结构清晰，结果可复现。
