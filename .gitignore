@@ -1,0 +1,4 @@
+_book/
+renv/library/
+.Rhistory
+.RData
